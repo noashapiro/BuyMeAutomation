@@ -1,15 +1,12 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.testng.annotations.Test;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 
 public class RegistrationTest {
     private static WebDriver driver;
@@ -20,10 +17,13 @@ public class RegistrationTest {
     public static void BeforeAll(){
         driver = DriverSingleton.getDriverInstance();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://buyme.co.il/?modal=login");
-
+        driver.get("https://buyme.co.il");
     }
 
+    @Test
+    public static void test00_registrationOrLogin(){
+        registrationPage.clickLoginOrRegis();
+    }
     @Test
     public static void test01_registration() {
         registrationPage.clickRegistration();
@@ -31,8 +31,8 @@ public class RegistrationTest {
 
     @Test
     public static void test02_fillName(){
-        String name = registrationPage.enterFirstName();
-        Assert.assertEquals(name, "Noa shapiro");
+        registrationPage.enterFirstName();
+        //Assert.assertEquals(name, "Noa shapiro");
     }
 
     @Test
@@ -49,12 +49,19 @@ public class RegistrationTest {
     public static void test04_reEnterPassword(){
         registrationPage.reEnterPassword();
     }
+    @Test
+    public static void test05_assertAllFields(){
+        String name = registrationPage.getTextFromNameElement();
+        Assert.assertEquals(name, "Noa Shapiro");
+    }
 
     @Test
-    public static void test05_confirmRegistration(){
+    public static void test06_confirmRegistration(){
         registrationPage.pressRegistration();
     }
 
-
-
+    @AfterClass
+    public static void afterAll(){
+        driver.quit();
+    }
 }
