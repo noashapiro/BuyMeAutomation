@@ -16,7 +16,7 @@ public class HomePage extends BasePage{
 
     public void pickArea(){
         clickElement(By.xpath("//*[@id=\"ember1069\"]/div/div[1]/span"));
-        clickElement(By.xpath("//*[@id=\"ember1095\"]/span"));
+        clickElement(By.xpath("//*[@id=\"ember1957\"]/span"));
     }
 
     public void pickCategory(){

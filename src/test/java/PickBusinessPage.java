@@ -10,7 +10,7 @@ public class PickBusinessPage extends BasePage{
     }
 
     public void PickBusiness(){
-        clickElement(By.xpath("//*[@id=\"ember1758\"]/div[3]"));
+        clickElement(By.xpath("//*[@id=\"ember1436\"]/div[2]/span"));
     }
 
     public void EnterPrice(){
