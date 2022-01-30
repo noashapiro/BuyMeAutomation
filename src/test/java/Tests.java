@@ -6,10 +6,12 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class HomePageTest {
+public class Tests {
 
     private static WebDriver driver;
     private static HomePage homePage = new HomePage();
+    private static PickBusinessPage pickBusinessPage = new PickBusinessPage();
+
 
     @BeforeClass
     public static void BeforeAll(){
@@ -37,6 +39,26 @@ public class HomePageTest {
     @Test
     public static void test03_findClick(){
         homePage.clickFindButton();
+    }
+
+    @Test
+    public static void test01_assertUrl(){
+
+    }
+
+    @Test
+    public static void test02_pickBusiness(){
+        pickBusinessPage.PickBusiness();
+    }
+
+    @Test
+    public static void test03_pickPrice(){
+        pickBusinessPage.EnterPrice();
+    }
+
+    @Test
+    public static void test04_clickChoiceButton(){
+        pickBusinessPage.PressChoice();
     }
 
 }
