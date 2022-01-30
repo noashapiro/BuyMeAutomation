@@ -49,12 +49,12 @@ public class RegistrationPage extends BasePage {
     }
 
     public void enterPassword() {
-      sendKeysToElement(passwordInputBox, "1234");
+      sendKeysToElement(passwordInputBox, "123456Nn");
 
     }
 
     public void reEnterPassword() {
-        sendKeysToElement(reEnterPasswordInputBox, "1234");
+        sendKeysToElement(reEnterPasswordInputBox, "123456Nn");
     }
 
     public void pressRegistration() {

@@ -10,7 +10,6 @@ import java.time.Duration;
 
 public class RegistrationTest {
     private static WebDriver driver;
-    private static WebDriverWait wait;
     private static RegistrationPage registrationPage = new RegistrationPage();
 
     @BeforeClass
@@ -18,6 +17,7 @@ public class RegistrationTest {
         driver = DriverSingleton.getDriverInstance();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://buyme.co.il");
+        driver.manage().window().maximize();
     }
 
     @Test
