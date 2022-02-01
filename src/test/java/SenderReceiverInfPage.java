@@ -3,7 +3,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class SenderReceiverInfPage extends BasePage {
@@ -42,11 +41,11 @@ public class SenderReceiverInfPage extends BasePage {
     }
 
     public void pressNow(){
-        clickElement(By.cssSelector("circle[class=\"fill\"]"));
+        clickElement(By.xpath("//*[@id=\"ember4071\"]/svg/circle[1]"));
     }
 
     public void pickEmailOrSms(){
-        clickElement(By.xpath("//*[@id=\"ember1648\"]/div[2]/div[1]/svg/path[1]"));
+        clickElement(By.xpath("//*[@id=\"ember4074\"]/div[2]/div[1]/svg/path[1]"));
     }
 
     public void enterEmailOrNum(){

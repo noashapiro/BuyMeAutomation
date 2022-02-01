@@ -1,3 +1,8 @@
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,10 +21,18 @@ public class Tests {
     private static PickBusinessPage pickBusinessPage = new PickBusinessPage();
     private static SenderReceiverInfPage senderReceiverInfPage = new SenderReceiverInfPage();
     private static RegistrationPage registrationPage = new RegistrationPage();
+    private static ExtentReports extent= new ExtentReports();
+    private static ExtentTest test = extent.createTest("Buy Me automation test", "Sample description");
 
     @BeforeClass
     public static void BeforeAll() throws Exception {
-        String browser = Utils.getData("browserType");
+        String cwd = System.getProperty("user.dir");
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(cwd + "\\extent.html");
+        extent.attachReporter(htmlReporter);
+        test.log(Status.INFO, "before test method");
+
+        test.pass("details", MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "picName")).build());
+
         driver = DriverSingleton.getDriverInstance();
         String url = Utils.getData("URL");
         driver.get(url);
@@ -80,6 +93,11 @@ public class Tests {
         senderReceiverInfPage.enterBlessing("MazalTov");
         senderReceiverInfPage.uploadPic();
         senderReceiverInfPage.pressContinue();
+        senderReceiverInfPage.pressNow();
+        senderReceiverInfPage.pickEmailOrSms();
+        senderReceiverInfPage.enterEmailOrNum();
+        senderReceiverInfPage.enterSenderName();
+        senderReceiverInfPage.pressPayment();
     }
 
     @Test(priority = 8)
@@ -94,5 +112,6 @@ public class Tests {
     @AfterClass
     public static void AfterAll(){
         driver.quit();
+        extent.flush();
     }
 }
