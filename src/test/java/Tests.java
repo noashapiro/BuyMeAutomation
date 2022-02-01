@@ -41,22 +41,12 @@ public class Tests {
 
     @Test(priority = 1)
     public static void registrationOrLogin(){
-        try{
             registrationPage.clickLoginOrRegis();
-            test.log(Status.PASS, "passed");
-        }catch (WebDriverException e){
-            test.log(Status.FAIL, "failed");
-        }
     }
 
     @Test(priority = 2)
     public static void registration() {
-        try{
             registrationPage.registration();
-            test.log(Status.PASS, "passed");
-        }catch (WebDriverException e){
-            test.log(Status.FAIL, "failed");
-        }
     }
 
     @Test(priority = 3)
