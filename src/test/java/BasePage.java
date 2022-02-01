@@ -10,13 +10,13 @@ public class BasePage {
     }
 
     public void sendKeysToElement(By locator, String text) {
+        getWebElement(locator).clear();
         getWebElement(locator).sendKeys(text);
     }
 
     public String getTextFromElement(By locator){
         return getWebElement(locator).getText();
     }
-
 
     private WebElement getWebElement(By locator) {
         return DriverSingleton.getDriverInstance().findElement(locator);

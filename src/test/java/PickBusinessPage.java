@@ -13,12 +13,12 @@ public class PickBusinessPage extends BasePage{
         clickElement(By.xpath("//*[@id=\"ember1436\"]/div[2]/span"));
     }
 
-    public void EnterPrice(){
-        sendKeysToElement(By.xpath("//*[@id=\"ember1870\"]"), "10");
+    public void EnterPrice(String value){
+        sendKeysToElement(By.cssSelector("input[placeholder=\"הכנס סכום\"]"), value);
     }
 
     public void PressChoice(){
-        clickElement(By.xpath("//*[@id=\"ember2145\"]"));
+        clickElement(By.cssSelector("button[type=\"submit\"]"));
     }
 
 
