@@ -29,6 +29,7 @@ public class SenderReceiverInfPage extends BasePage {
         sendKeysToElement(By.cssSelector("textarea[placeholder=\"מזל טוב, תודה רבה או פשוט מלא אהבה? כאן כותבים מילים טובות ואיחולים שמחים\""), blessing);
     }
 
+    //????
     public void uploadPic(){
         String picPath = "C:\\Users\\97250\\Desktop\\pand.JPEG";
         WebElement myElement = driver.findElement(By.cssSelector("input[type=\"file\"]"));

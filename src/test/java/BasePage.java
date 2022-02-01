@@ -17,7 +17,7 @@ public class BasePage {
         try {
             getWebElement(locator).click();
         }catch (NoSuchElementException e){
-            test.info("details", MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(DriverSingleton.getDriverInstance(), "NotFoundElement")).build());
+            test.fail("details", MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(DriverSingleton.getDriverInstance(), "NotFoundElement")).build());
         }
 
     }
@@ -27,7 +27,7 @@ public class BasePage {
             getWebElement(locator).clear();
             getWebElement(locator).sendKeys(text);
         }catch (NoSuchElementException e){
-            test.info("details", MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(DriverSingleton.getDriverInstance(), "NotFoundElement")).build());
+            test.fail("details", MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(DriverSingleton.getDriverInstance(), "NotFoundElement")).build());
         }
     }
 

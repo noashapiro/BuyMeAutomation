@@ -5,6 +5,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -31,8 +32,6 @@ public class Tests {
         extent.attachReporter(htmlReporter);
         test.log(Status.INFO, "before test method");
 
-        test.pass("details", MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "picName")).build());
-
         driver = DriverSingleton.getDriverInstance();
         String url = Utils.getData("URL");
         driver.get(url);
@@ -42,11 +41,22 @@ public class Tests {
 
     @Test(priority = 1)
     public static void registrationOrLogin(){
-        registrationPage.clickLoginOrRegis();
+        try{
+            registrationPage.clickLoginOrRegis();
+            test.log(Status.PASS, "passed");
+        }catch (WebDriverException e){
+            test.log(Status.FAIL, "failed");
+        }
     }
+
     @Test(priority = 2)
     public static void registration() {
-        registrationPage.registration();
+        try{
+            registrationPage.registration();
+            test.log(Status.PASS, "passed");
+        }catch (WebDriverException e){
+            test.log(Status.FAIL, "failed");
+        }
     }
 
     @Test(priority = 3)
@@ -111,7 +121,7 @@ public class Tests {
 
     @AfterClass
     public static void AfterAll(){
-        driver.quit();
+        //driver.quit();
         extent.flush();
     }
 }
