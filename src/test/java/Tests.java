@@ -41,12 +41,18 @@ public class Tests {
 
     @Test(priority = 1)
     public static void registrationOrLogin(){
+        try{
             registrationPage.clickLoginOrRegis();
+            test.log(Status.PASS, "before test method");
+        }
+        catch (WebDriverException e) {
+            test.log(Status.FAIL, "before test method");
+        }
     }
 
     @Test(priority = 2)
     public static void registration() {
-            registrationPage.registration();
+        registrationPage.registration();
     }
 
     @Test(priority = 3)
@@ -86,7 +92,7 @@ public class Tests {
 
     @Test(priority = 7)
     public static void fillDetails_firstStep(){
-        driver.get("https://buyme.co.il/money/1290005?price=1");
+        driver.get("https://buyme.co.il/money/1290005?price=1&step=2");
         senderReceiverInfPage.someBodyElseButton();
         senderReceiverInfPage.receiverName();
         senderReceiverInfPage.pickAnEvent();
@@ -102,6 +108,7 @@ public class Tests {
 
     @Test(priority = 8)
     public static void fillDetails_secondStep(){
+        driver.get("https://buyme.co.il/money/1290005?price=1&step=2");
         senderReceiverInfPage.pressNow();
         senderReceiverInfPage.pickEmailOrSms();
         senderReceiverInfPage.enterEmailOrNum();

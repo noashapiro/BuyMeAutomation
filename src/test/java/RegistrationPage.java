@@ -7,11 +7,12 @@ public class RegistrationPage extends BasePage {
     private WebDriver driver;
 
     private By loginOrRegisButton = By.cssSelector("li[class=notSigned]");
-    private By registrationButton = By.xpath("//*[@id=\"ember944\"]/div/div[1]/div/div/div[3]/div[1]/span");
-    private By nameInputBox = By.xpath("//*[@id=\"ember1697\"]");
-    private By eMailInputBox = By.xpath("//*[@id=\"ember1704\"]");
+    private By registrationButton = By.cssSelector(".register-or-login .text-link");
+   // private By registrationButton = By.xpath("//*[@id=\"ember944\"]/div/div[1]/div/div/div[3]/div[1]/span");
+    private By nameInputBox = By.cssSelector("input[placeholder=\"שם פרטי\"]");
+    private By eMailInputBox = By.cssSelector("input[type=\"email\"]");
     private By passwordInputBox = By.id("valPass");
-    private By reEnterPasswordInputBox = By.xpath("/html/body/div[1]/div/div[1]/div/div/div[3]/div[2]/div[3]/form/div[4]/label/input");
+    private By reEnterPasswordInputBox = By.cssSelector("input[placeholder=\"אימות סיסמה\"]");
     private By endRegisButton = By.cssSelector("button[type=submit]");
 
 

@@ -25,6 +25,7 @@ public class BasePage {
     public void sendKeysToElement(By locator, String text) {
         try {
             getWebElement(locator).clear();
+            getWebElement(locator).click();
             getWebElement(locator).sendKeys(text);
         }catch (NoSuchElementException e){
             test.fail("details", MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(DriverSingleton.getDriverInstance(), "NotFoundElement")).build());

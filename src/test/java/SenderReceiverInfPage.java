@@ -16,9 +16,9 @@ public class SenderReceiverInfPage extends BasePage {
         clickElement(By.className("button-forSomeone"));
     }
 
-    public void receiverName(){
-        sendKeysToElement(By.xpath("//*[@id=\"ember1278\"]"), "Shai");
-    }
+   // public void receiverName(){ sendKeysToElement(By.xpath("//*[@id=\"ember1278\"]"), "Shai");}
+    public void receiverName(){ sendKeysToElement(By.className("ember-text-field"), "Shai");}
+
 
     public void pickAnEvent(){
         clickElement(By.className("selected-text")); //click on dropdown
@@ -46,7 +46,9 @@ public class SenderReceiverInfPage extends BasePage {
     }
 
     public void pickEmailOrSms(){
-        clickElement(By.xpath("//*[@id=\"ember4074\"]/div[2]/div[1]/svg/path[1]"));
+      //  clickElement(By.xpath("//*[@id=\"ember4074\"]/div[2]/div[1]/svg/path[1]"));
+         // clickElement(By.cssSelector(".method-icon > .circle:nth-child(2)"));
+          clickElement(By.cssSelector("div:nth-child(2) > div.circle-area"));
     }
 
     public void enterEmailOrNum(){
