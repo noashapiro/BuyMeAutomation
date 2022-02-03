@@ -1,3 +1,5 @@
+package Pages;
+import Infrastructure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -52,7 +54,7 @@ public class RegistrationPage extends BasePage {
     }
 
     public void enterEmail() {
-       sendKeysToElement(eMailInputBox, "NoaShapirop@gmail.com");
+       sendKeysToElement(eMailInputBox, "NoaShapiro@gmail.com");
     }
 
     public void enterPassword() {

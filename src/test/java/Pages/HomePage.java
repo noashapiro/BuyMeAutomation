@@ -1,7 +1,9 @@
+package Pages;
+import Infrastructure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
     private WebDriver driver;
 
     private By Parent = By.className("search-bar-wrapper");

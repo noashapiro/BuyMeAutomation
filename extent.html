@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 3, 2022 06:54:46 PM</span></a>
+<a href="#"><span class="badge badge-primary">Feb 3, 2022 07:12:29 PM</span></a>
 </li>
 </ul>
 </div>
@@ -66,7 +66,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,25 +74,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Buy Me automation test</p>
             <p class="text-sm">
-              <span>6:54:47 PM</span> / <span>00:00:09:714</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>7:12:29 PM</span> / <span>00:00:30:639</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Buy Me automation test</h5>
-<span class='badge badge-success'>02.03.2022 6:54:47 PM</span>
-<span class='badge badge-danger'>02.03.2022 6:54:56 PM</span>
-<span class='badge badge-default'>00:00:09:714</span>
+<h5 class="test-status text-fail">Buy Me automation test</h5>
+<span class='badge badge-success'>02.03.2022 7:12:29 PM</span>
+<span class='badge badge-danger'>02.03.2022 7:13:00 PM</span>
+<span class='badge badge-default'>00:00:30:639</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -105,23 +105,162 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:54:47 PM</td>
+        <td>7:12:29 PM</td>
         <td>
           before test method
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>6:54:55 PM</td>
+        <td>7:12:34 PM</td>
+        <td>
+          Click registration Or Login
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:12:35 PM</td>
+        <td>
+          registrationOrLogin passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:12:35 PM</td>
+        <td>
+          Registration to buy me
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:12:36 PM</td>
+        <td>
+          registration passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:12:36 PM</td>
+        <td>
+          confirmRegistration
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:12:36 PM</td>
+        <td>
+          confirm registration passed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:12:36 PM</td>
+        <td>
+          assertUrl
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:12:36 PM</td>
+        <td>
+          homePage
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:12:37 PM</td>
+        <td>
+          The test has failed element click intercepted: Element <span class="selected-text" alt="..." title="סכום">סכום</span> is not clickable at point (1112, 490). Other element would receive the click: <div class="inner">...</div>
+  (Session info: chrome=96.0.4664.110)
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'LAPTOP-4HB90DLP', ip: '192.168.1.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6cb749c4cd2ec2c29d22138d9cb0f5f5, clickElement {id=0c4896ec-874d-4f63-b91d-a9a78d417e48}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\97250\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50999}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50999/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (6cb749c4cd2ec2c29d22138d9cb0f5f5)] -> css selector: span[title="סכום"]]
+Session ID: 6cb749c4cd2ec2c29d22138d9cb0f5f5
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='NotFoundElement.png' src="NotFoundElement.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:12:37 PM</td>
         <td>
           pickBusiness
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>6:54:56 PM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:12:38 PM</td>
         <td>
-          pickBusiness passed
+          The test has failed element click intercepted: Element <div id="ember1435" class="ember-view bm-features">...</div> is not clickable at point (631, 379). Other element would receive the click: <div class="main-form">...</div>
+  (Session info: chrome=96.0.4664.110)
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'LAPTOP-4HB90DLP', ip: '192.168.1.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6cb749c4cd2ec2c29d22138d9cb0f5f5, clickElement {id=00cd2b1b-86e1-4faf-8572-3e3564614ac8}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\97250\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50999}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50999/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (6cb749c4cd2ec2c29d22138d9cb0f5f5)] -> xpath: //*[@id="ember1435"]]
+Session ID: 6cb749c4cd2ec2c29d22138d9cb0f5f5
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='NotFoundElement.png' src="NotFoundElement.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:12:38 PM</td>
+        <td>
+          fillDetails
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:12:49 PM</td>
+        <td>
+          The test has failed no such element: Unable to locate element: {"method":"css selector","selector":".button\-forSomeone"}
+  (Session info: chrome=96.0.4664.110)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'LAPTOP-4HB90DLP', ip: '192.168.1.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6cb749c4cd2ec2c29d22138d9cb0f5f5, findElement {using=css selector, value=.button\-forSomeone}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\97250\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50999}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50999/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6cb749c4cd2ec2c29d22138d9cb0f5f5
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='NotFoundElement.png' src="NotFoundElement.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:12:49 PM</td>
+        <td>
+          fillDetails
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:13:00 PM</td>
+        <td>
+          The test has failed no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="ember4071"]/svg/circle[1]"}
+  (Session info: chrome=96.0.4664.110)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'LAPTOP-4HB90DLP', ip: '192.168.1.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6cb749c4cd2ec2c29d22138d9cb0f5f5, findElement {using=xpath, value=//*[@id="ember4071"]/svg/circle[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\97250\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50999}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50999/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6cb749c4cd2ec2c29d22138d9cb0f5f5
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='NotFoundElement.png' src="NotFoundElement.png">
+    
+    </div></div>
         </td>
       </tr>
   </tbody>
@@ -143,25 +282,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 3, 2022 06:54:46 PM</h3>
+<h3>Feb 3, 2022 07:12:29 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 3, 2022 06:54:56 PM</h3>
+<h3>Feb 3, 2022 07:13:00 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -177,12 +316,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> tests passed
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -200,10 +339,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='33%'><b>1</b> events passed</small></div>
+<div><small data-tooltip='18%'><b>3</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>2</b> others
+<small data-tooltip='25%'><b>4</b> events failed,
+<b data-tooltip='%'>9</b> others
 </small>
 </div>
 </div>
@@ -219,7 +358,7 @@
 </div></div>
 <script>
 var timeline = {
-"Buy Me automation test":9.714
+"Buy Me automation test":30.639
 };
 </script>
 <div class="row">
@@ -228,8 +367,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -245,11 +384,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 1,
-failEvents: 0,
+passEvents: 3,
+failEvents: 4,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 2
+infoEvents: 9
 };
 </script>        </div>
       </div>
