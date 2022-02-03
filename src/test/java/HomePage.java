@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 public class HomePage extends BasePage{
     private WebDriver driver;
 
+    private By Parent = By.className("search-bar-wrapper");
+
     private By amount = By.cssSelector("span[title=\"סכום\"]");
     private By selectAmount = By.cssSelector("li[value=\"1\"]");
 

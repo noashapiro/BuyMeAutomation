@@ -30,7 +30,6 @@ public class Utils {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
         return ImagesPath + ".png";
     }
 }

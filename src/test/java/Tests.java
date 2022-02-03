@@ -7,7 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -18,6 +20,7 @@ import java.time.Duration;
 public class Tests {
 
     private static WebDriver driver;
+    private static WebDriverWait wait;
     private static HomePage homePage = new HomePage();
     private static PickBusinessPage pickBusinessPage = new PickBusinessPage();
     private static SenderReceiverInfPage senderReceiverInfPage = new SenderReceiverInfPage();
@@ -37,22 +40,33 @@ public class Tests {
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
+
     }
 
     @Test(priority = 1)
     public static void registrationOrLogin(){
+        test.info("Click registration Or Login");
         try{
             registrationPage.clickLoginOrRegis();
-            test.log(Status.PASS, "before test method");
+            test.log(Status.PASS, "registrationOrLogin passed");
         }
-        catch (WebDriverException e) {
-            test.log(Status.FAIL, "before test method");
+        catch (Exception e) {
+            e.printStackTrace();
+            test.fail("The test has failed " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "NotFoundElement")).build());
         }
     }
 
     @Test(priority = 2)
     public static void registration() {
-        registrationPage.registration();
+        test.info("Registration to buy me");
+        try{
+            registrationPage.registration();
+            test.log(Status.PASS, "registration passed");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            test.fail("The test has failed " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "NotFoundElement")).build());
+        }
     }
 
     @Test(priority = 3)
@@ -65,60 +79,102 @@ public class Tests {
 
     @Test(priority = 4)
     public static void confirmRegistration(){
-        registrationPage.pressRegistration();
+        test.info("confirmRegistration");
+        try{
+            registrationPage.pressRegistration();
+            test.log(Status.PASS, "confirm registration passed");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            test.fail("The test has failed " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "NotFoundElement")).build());
+        }
     }
 
 
     @Test(priority = 5)
     public static void homePage(){
-        homePage.pickPrice();
-        homePage.pickArea();
-        homePage.pickCategory();
-        homePage.clickFindButton();
+        test.info("homePage");
+        try{
+            homePage.pickPrice();
+            homePage.pickArea();
+            homePage.pickCategory();
+            homePage.clickFindButton();
+            test.log(Status.PASS, "choose price, area and category passed");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            test.fail("The test has failed " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "NotFoundElement")).build());
+        }
     }
 
     @Test(priority = 5)
     public static void assertUrl(){
         String url = "https://buyme.co.il/search?budget=1&category=16&region=14";
-        Assert.assertEquals(url, driver.getCurrentUrl());
+        test.info("assertUrl");
+        try{
+            Assert.assertEquals(url, driver.getCurrentUrl());
+            test.log(Status.PASS, "assertUrl passed");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            test.fail("The test has failed " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "NotFoundElement")).build());
+        }
     }
 
     @Test(priority = 6)
     public static void pickBusiness(){
-        pickBusinessPage.PickBusiness();
-        pickBusinessPage.EnterPrice("100");
-        pickBusinessPage.PressChoice();
+        test.info("pickBusiness");
+        try{
+            pickBusinessPage.PickBusiness();
+            pickBusinessPage.EnterPrice("100");
+            pickBusinessPage.PressChoice();
+            test.log(Status.PASS, "pickBusiness passed");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            test.fail("The test has failed " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "NotFoundElement")).build());
+        }
     }
 
     @Test(priority = 7)
     public static void fillDetails_firstStep(){
-        driver.get("https://buyme.co.il/money/1290005?price=1&step=2");
-        senderReceiverInfPage.someBodyElseButton();
-        senderReceiverInfPage.receiverName();
-        senderReceiverInfPage.pickAnEvent();
-        senderReceiverInfPage.enterBlessing("MazalTov");
-        senderReceiverInfPage.uploadPic();
-        senderReceiverInfPage.pressContinue();
-        senderReceiverInfPage.pressNow();
-        senderReceiverInfPage.pickEmailOrSms();
-        senderReceiverInfPage.enterEmailOrNum();
-        senderReceiverInfPage.enterSenderName();
-        senderReceiverInfPage.pressPayment();
+        test.info("fillDetails");
+        try{
+            senderReceiverInfPage.someBodyElseButton();
+            senderReceiverInfPage.receiverName();
+            senderReceiverInfPage.pickAnEvent();
+            senderReceiverInfPage.enterBlessing("MazalTov");
+            senderReceiverInfPage.uploadPic();
+            senderReceiverInfPage.pressContinue();
+            test.log(Status.PASS, "fillDetails passed");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            test.fail("The test has failed " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "NotFoundElement")).build());
+        }
     }
 
     @Test(priority = 8)
     public static void fillDetails_secondStep(){
-        driver.get("https://buyme.co.il/money/1290005?price=1&step=2");
-        senderReceiverInfPage.pressNow();
-        senderReceiverInfPage.pickEmailOrSms();
-        senderReceiverInfPage.enterEmailOrNum();
-        senderReceiverInfPage.enterSenderName();
-        senderReceiverInfPage.pressPayment();
+       // driver.get("https://buyme.co.il/money/1290005?price=1&step=2");
+        test.info("fillDetails");
+        try{
+            senderReceiverInfPage.pressNow();
+            senderReceiverInfPage.pickEmailOrSms();
+            senderReceiverInfPage.enterEmailOrNum();
+            senderReceiverInfPage.enterSenderName();
+            senderReceiverInfPage.pressPayment();
+            test.log(Status.PASS, "fillDetails passed");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            test.fail("The test has failed " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(Utils.takeScreenShot(driver, "NotFoundElement")).build());
+        }
     }
 
     @AfterClass
     public static void AfterAll(){
-        //driver.quit();
+        driver.quit();
         extent.flush();
     }
 }

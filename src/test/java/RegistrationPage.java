@@ -8,7 +8,6 @@ public class RegistrationPage extends BasePage {
 
     private By loginOrRegisButton = By.cssSelector("li[class=notSigned]");
     private By registrationButton = By.cssSelector(".register-or-login .text-link");
-   // private By registrationButton = By.xpath("//*[@id=\"ember944\"]/div/div[1]/div/div/div[3]/div[1]/span");
     private By nameInputBox = By.cssSelector("input[placeholder=\"שם פרטי\"]");
     private By eMailInputBox = By.cssSelector("input[type=\"email\"]");
     private By passwordInputBox = By.id("valPass");
@@ -53,7 +52,7 @@ public class RegistrationPage extends BasePage {
     }
 
     public void enterEmail() {
-       sendKeysToElement(eMailInputBox, "NoaShapirow@gmail.com");
+       sendKeysToElement(eMailInputBox, "NoaShapirop@gmail.com");
     }
 
     public void enterPassword() {
